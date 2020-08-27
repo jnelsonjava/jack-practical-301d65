@@ -25,6 +25,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', renderPokemon);
 app.post('/pokemon', addFavorite);
+app.get('/favorites', renderFavorites);
 
 // Route Handlers
 
@@ -41,6 +42,14 @@ function addFavorite(req, res) {
   console.log(`inserting ${req.body.name} into favorites`);
   client.query('INSERT INTO favorites (name) VALUES ($1)', [req.body.name])
   res.redirect('/');
+}
+
+function renderFavorites(req, res) {
+  client.query('SELECT name FROM favorites')
+    .then( nameResult => {
+      const pokeNames = nameResult.rows.map(poke => poke.name);
+      res.render('pages/favorites', {names: pokeNames});
+    })
 }
 
 // Functions
