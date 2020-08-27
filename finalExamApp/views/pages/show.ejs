@@ -6,11 +6,16 @@
   <%- include('../layouts/header') %> 
   
   <h1>LOADED</h1>
-  <ul>
-    <% for (let name of names) { %>
-      <li><%= name %> </li>
-    <% } %>
-  </ul>
+
+
+  <% for (let name of names) { %>
+  <form action="/pokemon" method="POST">
+    <h2><%= name %></h2>
+    <input name="name" value="<%= name %>" style="display: none;">
+    <button type="submit">Add to Favorites</button>
+  </form>
+  <% } %>
+
   <%- include('../layouts/footer') %> 
 </body>
 </html>
