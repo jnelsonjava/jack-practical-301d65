@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../layouts/head', {title: 'Show Pokemon'}) %> 
+
+<body>
+  <%- include('../layouts/header') %> 
+  
+  <h1>LOADED</h1>
+  <ul>
+    <% for (let name of names) { %>
+      <li><%= name %> </li>
+    <% } %>
+  </ul>
+  <%- include('../layouts/footer') %> 
+</body>
+</html>
