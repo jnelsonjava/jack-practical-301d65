@@ -54,6 +54,13 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithJQuery = () => {
   // Solution code here ...
+  starWars.keyPlayers.force.light.forEach(person => {
+    const template = $('#template').eq(0).clone();
+    template.find('h2').text(person['name']);
+    template.find('h3').text(person['height']);
+    template.find('p').text(person['eye_color']);
+    $('main').append(template);
+  });
 }
 
 ///////////////////////////////////////////////////
