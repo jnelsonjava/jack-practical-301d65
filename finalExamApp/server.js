@@ -30,7 +30,7 @@ app.get('/favorites', renderFavorites);
 // Route Handlers
 
 function renderPokemon(req, res) {
-  const pokeUrl = `https://pokeapi.co/api/v2/pokemon?limit=50`;
+  const pokeUrl = `https://pokeapi.co/api/v2/pokemon?limit=20`;
   superagent.get(pokeUrl)
     .then( (pokeResult) => {
       const sortedNames = pokeResult.body.results.map(poke => poke.name).sort();
