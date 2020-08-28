@@ -31,10 +31,20 @@ const cats = ['grumpy cat', 'hello kitty', 'garfield', 'cheshire cat', 'lil bub'
 
 const generateDropDown = () => {
   // Solution code here ...
+  $('form').append($('<select>'));
+  for (let cat of makeUniqueList()) {
+    $('select').append($('<option>').text(cat));
+  }
 }
 
 const makeUniqueList = () => {
   // Solution code here ...
+  return cats.reduce( (uniques, cat) => {
+    if (!uniques.includes(cat)) {
+      uniques.push(cat);
+    }
+    return uniques;
+  }, []);
 }
 
 ///////////////////////////////////////////////////

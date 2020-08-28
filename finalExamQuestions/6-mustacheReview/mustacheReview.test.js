@@ -52,6 +52,7 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithMustache = () => {
   // Solution code here...
+  return characters.map(house => Mustache.render($('#template').html(), house));
 }
 
 ///////////////////////////////////////////////////

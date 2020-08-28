@@ -20,6 +20,8 @@ const createServer = () => {
   const app = express();
 
   // routes go here
+  app.get('/', (req, res) => res.status(200).send());
+  app.delete('/things/1', (req, res) => res.status(405).send());
 
   return app;
 };
