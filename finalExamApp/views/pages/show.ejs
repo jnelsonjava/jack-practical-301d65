@@ -4,19 +4,17 @@
 
 <body>
   <%- include('../layouts/header') %> 
-  
-  <a href="/">Home</a>
-  <a href="/favorites">Favorites</a>
-  <h1>LOADED</h1>
 
+  <main>
+    <% for (let name of names) { %>
+    <form action="/pokemon" method="POST">
+      <h2><%= name %></h2>
+      <input name="name" value="<%= name %>" style="display: none;">
+      <button type="submit">Add to Favorites</button>
+    </form>
+    <% } %>
+  </main>
 
-  <% for (let name of names) { %>
-  <form action="/pokemon" method="POST">
-    <h2><%= name %></h2>
-    <input name="name" value="<%= name %>" style="display: none;">
-    <button type="submit">Add to Favorites</button>
-  </form>
-  <% } %>
 
   <%- include('../layouts/footer') %> 
 </body>
