@@ -1,0 +1,44 @@
+header {
+  background-color: rgba(111, 184, 1, 0.815);
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+main, ul {
+  background-color: rgb(255, 119, 119);
+}
+
+form, li {
+  background-color: indigo;
+  text-align: center;
+  padding: 3px;
+  margin: 10px 5px;
+  border: 2px lightseagreen groove;
+}
+
+li {
+  padding: 10px;
+  font-size: large;
+  min-width: 100px;
+}
+
+button {
+  margin-top: 4px;
+  color: #ffeb3b;
+  background-color: lightseagreen;
+}
+
+button:hover {
+  background-color: crimson;
+}
+
+footer {
+  background-color: black;
+}
+
+h3 {
+  line-height: 30px;
+  font-size: small;
+}
